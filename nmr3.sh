@@ -8,4 +8,7 @@ for dept in Marketing Engineering HR; do
 done
 
 
+find /home/ramdan/Departemen -type f -name "*.pdf" -mtime -7 -exec stat -c "%n | Dibuat: %w | Diubah: %y" {} \; > daftar_pdf_minggu_lalu.txt
+
+
 
