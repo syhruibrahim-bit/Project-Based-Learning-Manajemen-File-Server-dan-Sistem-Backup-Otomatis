@@ -7,7 +7,7 @@
 # 1. Buat struktur direktori
 #Buat folder untuk 3 departemen (Marketing, Engineering, HR) dengan subfolder Documents dan Archives di masing-masing
 
-mkdir -p /home/Departemen/{Marketing,Engineering,HR}/{Documents,Archives}
+mkdir -p /Departemen/{Marketing,Engineering,HR}/{Documents,Archives}
 
 #mkdir Membuat direktori baru
 #-p = membuat folder beserta subfolder tanpa error jika sudah ada
@@ -19,10 +19,10 @@ mkdir -p /home/Departemen/{Marketing,Engineering,HR}/{Documents,Archives}
 
 for dept in Marketing Engineering HR; do
     # find untuk mencari file berdasarkan awalan nama departemen dan exec = mengeksekusi mv untuk memindahkan ke departemen yang sesuai
-    find -type f -name /home/Departemen/"${dept}_*" -not -path "*/Documents/*" -exec mv {} /home/Departemen/${dept}/Documents/ \; 2>/dev/null
+    find -type f -name /Departemen/"${dept}_*" -not -path "*/Documents/*" -exec mv {} /Departemen/${dept}/Documents/ \; 2>/dev/null
 
     # cp untuk menyalin untuk membackup ke folder Archives
-    cp /home/Departemen/${dept}/Documents/${dept}_* /home/departemen/${dept}/Archives/
+    cp /Departemen/${dept}/Documents/${dept}_* /departemen/${dept}/Archives/
 done
 
 
