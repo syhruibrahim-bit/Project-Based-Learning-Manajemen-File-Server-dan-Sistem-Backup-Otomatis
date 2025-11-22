@@ -28,13 +28,13 @@ done
 
 for dept in Marketing Engineering HR; do
     sudo groupadd "$dept"
-    sudo chown -R :"$dept" "/home/ramdan/departemen/$dept"
-    sudo chmod -R 770 "/home/ramdan/departemen/$dept"
+    sudo chown -R :"$dept" "/home/ramdan/Departemen/$dept"
+    sudo chmod -R 770 "/home/ramdan/Departemen/$dept"
 done
 # 4.Cari dan filter
 #Temukan semua file PDF yang dibuat minggu lalu dan buat daftar lengkapnya
 
-find /home/ramdan/departemen -type f -name "*.pdf" -mtime -7
+find /home/ramdan/Departemen -type f -name "*.pdf" -mtime -7
 
 
 
