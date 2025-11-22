@@ -52,7 +52,7 @@ done
 # 4.Cari dan filter
 #Temukan semua file PDF yang dibuat minggu lalu dan buat daftar lengkapnya
 
-find /home/ramdan/ -type f -name "*.pdf" -mtime -7
+find /home/ramdan/ -type f -name "*.pdf" -mtime -7 > daftar_pdf_minggu_lalu.txt
 # find = mencari file
 # -type f = hanya file
 # -name "*.pdf" = format PDF
