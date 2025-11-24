@@ -1,7 +1,7 @@
 #Membuat Variable agar lebih mudah saat pemanggilan
-data="/home/ramdan/data"                    # Folder sumber file yang akan dicari dan dibackup
-backup="/home/ramdan/backup"                # Folder tempat hasil backup disimpan
-log="/home/ramdab/backup/backup.log"        # Lokasi file log untuk mencatat aktivitas backup
+data="/home/ramdan/penting/data"                    # Folder sumber file yang akan dicari dan dibackup
+backup="/home/ramdan/penting/backup"                # Folder tempat hasil backup disimpan
+log="/home/ramdann/penting/backup/backup.log"        # Lokasi file log untuk mencatat aktivitas backup
 ext="*.txt"                                 # Ekstensi file yang dicari, bisa diganti misal *.pdf atau *.docx
 d=1                                         # Mencari file yang dimodifikasi dalam 1 hari terakhir 
 
