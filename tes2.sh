@@ -1,5 +1,5 @@
-src="/home/user/data"
-dest="/home/user/backup"
+src="/home/ramdan/data"
+dest="/home/ramdan/backup"
 log="$dest/backup.log"
 ext="*.txt"
 days=3
