@@ -6,14 +6,14 @@ ext="*.txt"                                 # Ekstensi file yang dicari, bisa di
 d=1                                         # Mencari file yang dimodifikasi dalam 1 hari terakhir 
 
 #Membuat timestamp
-timestamp=$(date +"%Y-%m-%d_%H-%M-%S")     # Membuat penanda waktu
-kompres="backup_$timestamp.tar.gz"         # Nama file backup hasil kompresi
-tmp="/tmp/backup_$timestamp"               # Folder sementara untuk menampung file sebelum dikompresi
+time=$(date +"%Y-%m-%d_%H-%M-%S")     # Membuat penanda waktu
+kompres="backup_$time.tar.gz"         # Nama file backup hasil kompresi
+tmp="/tmp/backup_$time"               # Folder sementara untuk menampung file sebelum dikompresi
 
 
 # 1. Mencari file berdasarkan kriteria
 mkdir -p "$tmp"                              # Membuat folder sementara jika belum ada
-find "$data" -mtime -$d -name "$ext" -exec cp {} "$TEMP_DIR" \;    # Menyalin file yang sesuai kriteria ke folder sementara
+find "$data" -mtime -$d -name "$ext" -exec cp {} "$tmp" \;    # Menyalin file yang sesuai kriteria ke folder sementara
 
 # Mengecek apakah ada file yang ditemukan
 if [ ! "$(ls -A $tmp)" ]; then              # Jika folder sementara kosong, berarti tidak ada file ditemukan
