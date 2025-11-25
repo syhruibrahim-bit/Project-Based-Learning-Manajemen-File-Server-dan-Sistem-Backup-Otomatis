@@ -1,33 +1,40 @@
+#=====================================
+# Nama    : Syahru Ramadhan Ibrhamim
+# NIM     : 05301425080
+# Sistem Backup Otomatis
+#=====================================
 
-src="/home/ramdan/data"
-dest="/home/ramdan/backup"
-log="$dest/backup.log"
-ext="*.txt"
-days=-7
-time=$(date +"%Y%m%d_%H%M%S")
-temp="$dest/backup_$time"
 
-mkdir -p "$temp"
+# Membuat Variable Agar memudahkan kita pada saat pemograman
+data="/home/ramdan/data"       # Folder sumber tempat file-file yang akan dicari
+backup="/home/ramdan/backup"     # Folder tujuan tempat backup disimpan
+log="$backup/backup.log"         # Lokasi file log untuk mencatat aktivitas backup
+ext="*.txt"                    # Ekstensi file yang akan dibackup
+d=-7                            # File yang dimodifikasi dalam 7 hari terakhir
+time=$(date +"%Y%m%d_%H%M%S")  # Membuat timestamp unik (tanggal_jam)
+temp="$backup/backup_$time"      # Nama folder temporary untuk menampung file hasil backup
 
-# Eksekusi find langsung tanpa grep
-find "$src" -name "$ext" -mtime "$days" -exec cp {} "$temp" \;
+mkdir -p "$temp"               # Membuat folder temporary (jika belum ada)
+
+# Mencari file sesuai ekstensi dan umur file, lalu menyalinnya ke temp
+find "$data" -name "$ext" -mtime "$d" -exec cp {} "$temp" \;  
 
 # Cek apakah folder temp kosong
-if [ -z "$(ls -A "$temp")" ]; then
-    echo "[$(date)] Tidak ditemukan file. Backup dibatalkan." | tee -a "$log"
+if [ -z "$(ls -A "$temp")" ]; then                               # Mengecek apakah folder temp kosong menggunakan ls -A
+    echo "[$(date)] Tidak ditemukan file. Backup dibatalkan." | tee -a "$log"  # Tulis pesan ke layar & log
     echo "Backup gagal."
-    rmdir "$temp"
-    exit 1
+    rmdir "$temp"                                                # Menghapus folder temp karena tidak ada isi
+    exit 1                                                       # Keluar dengan status error
 fi
 
-cd "$dest"
-tar -czf "backup_$time.tar.gz" "backup_$time"
-rm -rf "$temp"
+cd "$backup"                                                     # Pindah ke folder backup
+tar -czf "backup_$time.tar.gz" "backup_$time"                    # Mengarsipkan folder temp menjadi file .tar.gz
+rm -rf "$temp"                                                   # Menghapus folder temporary setelah dijadikan arsip
 
-echo "[$(date)] Backup berhasil. File: backup_$time.tar.gz" >> "$log"
+echo "[$(date)] Backup berhasil. File: backup_$time.tar.gz" >> "$log"   # Menuliskan log bahwa backup sukses
 
-echo "Backup berhasil!"
+echo "Backup berhasil!"                                          # Menampilkan pesan ke user
 echo "File backup  : backup_$time.tar.gz"
-echo "Lokasi simpan: $dest"
+echo "Lokasi simpan: $backup"
 
-exit 0
+exit 0                                                            # Keluar normal tanpa error
