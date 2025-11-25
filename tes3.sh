@@ -10,9 +10,6 @@ time=$(date +"%Y%m%d_%H%M%S")
 backup_file="$backup/backup_$time.tar.gz"
 temp="$backup/backup_$time"
 
-# Buat direktori backup jika belum ada
-mkdir -p "$backup"
-
 # Log mulai backup
 echo "==========================================" >> "$log"
 echo "[$(date)] MEMULAI PROSES BACKUP" >> "$log"
