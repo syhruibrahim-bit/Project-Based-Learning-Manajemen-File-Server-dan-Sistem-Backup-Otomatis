@@ -14,7 +14,8 @@ d=-7                            # File yang dimodifikasi dalam 7 hari terakhir
 time=$(date +"%Y%m%d_%H%M%S")  # Membuat timestamp unik (tanggal_jam)
 temp="$backup/backup_$time"      # Nama folder temporary untuk menampung file hasil backup
 
-mkdir -p "$temp"               # Membuat folder temporary (jika belum ada)
+# Membuat folder temporary
+mkdir -p "$temp"         
 
 # Mencari file sesuai ekstensi dan umur file, lalu menyalinnya ke temp
 find "$data" -name "$ext" -mtime "$d" -exec cp {} "$temp" \;  
@@ -27,11 +28,13 @@ if [ -z "$(ls -A "$temp")" ]; then                               # Mengecek apak
     exit 1                                                       # Keluar dengan status error
 fi
 
+# Membuat file arsips
 cd "$backup"                                                     # Pindah ke folder backup
 tar -czf "backup_$time.tar.gz" "backup_$time"                    # Mengarsipkan folder temp menjadi file .tar.gz
 rm -rf "$temp"                                                   # Menghapus folder temporary setelah dijadikan arsip
 
-echo "[$(date)] Backup berhasil. File: backup_$time.tar.gz" >> "$log"   # Menuliskan log bahwa backup sukses
+# Menuliskan log bahwa backup sukses
+echo "[$(date)] Backup berhasil. File: backup_$time.tar.gz" >> "$log"  
 
 echo "Backup berhasil!"                                          # Menampilkan pesan ke user
 echo "File backup  : backup_$time.tar.gz"
