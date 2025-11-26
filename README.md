@@ -4,9 +4,11 @@ NIM : 05301425080
 ------------------------------------------------------------
 Prodi : Sistem Informasi 25 | Kelas D 
 ------------------------------------------------------------
-**Tugas Project Base Learning Fliping Classroom**
-
-
+Project Based Learning: Flipped Classroom untuk Perintah Dasar Linux
+- Project 1. Skenario Praktik: Manajemen File Server
+Skenario: Anda adalah administrator sistem yang harus mengorganisir file-file proyek di server perusahaan. Gunakan perintah Linux untuk menyelesaikan tugas-tugas berikut dengan tepat.
+- Project 2: Sistem Backup Otomatis
+Deskripsi Proyek: Mahasiswa membuat script bash yang mengotomatisasi proses backup file penting, menggunakan kombinasi perintah Linux yang telah dipelajari.
 
 
 **1. ManajemenFileServer.sh**
