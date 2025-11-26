@@ -1,4 +1,4 @@
-===========================================================
+==================
 Nama : Syahru Ramadhan Ibrahim
 NIM : 05301425080
 Prodi : Sistem Informasi 25 | Kelas D 
