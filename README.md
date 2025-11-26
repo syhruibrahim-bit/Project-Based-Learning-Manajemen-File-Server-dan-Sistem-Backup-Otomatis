@@ -1,14 +1,13 @@
 Nama : Syahru Ramadhan Ibrahim
-===========================================================
-NIM : 05301425080
-===========================================================
-Prodi : Sistem Informasi 25 | Kelas D 
-===========================================================
-Tugas Project Base Learning Fliping Classroom
-===========================================================
-
-1. ManajemenFileServer.sh
 ------------------------------------------------------------
+NIM : 05301425080
+------------------------------------------------------------
+Prodi : Sistem Informasi 25 | Kelas D 
+------------------------------------------------------------
+Tugas Project Base Learning Fliping Classroom
+------------------------------------------------------------
+
+**1. ManajemenFileServer.sh**
 
 FUNGSI:
 Script ini digunakan untuk membuat struktur folder departemen, memindahkan file sesuai departemen, membuat backup file ke folder Archives, mengatur permission, dan menghasilkan daftar file PDF terbaru.
@@ -42,9 +41,8 @@ CARA KERJA SCRIPT:
    daftar_pdf_minggu_lalu.txt
 
 
-------------------------------------------------------------
-2. SistemBackupOtomatis.sh
-------------------------------------------------------------
+**2. SistemBackupOtomatis.sh**
+
 
 FUNGSI:
 Script ini melakukan backup otomatis berdasarkan ekstensi file dan tanggal modifikasi. File yang ditemukan akan dikumpulkan ke folder temporary, lalu dikompres menjadi .tar.gz, dan prosesnya dicatat di log.
@@ -78,13 +76,13 @@ CARA KERJA SCRIPT:
 6. Log proses backup ditulis ke backup.log.
 
 
-------------------------------------------------------------
+
 CATATAN PENTING
 ------------------------------------------------------------
 - Script memerlukan akses sudo untuk perintah groupadd, chown, dan chmod.
 - Pastikan path /home/ramdan/ sesuai dengan struktur sistem Linux Anda.
 - Script berjalan pada Linux (Ubuntu/Debian).
 
-------------------------------------------------------------
+
 SELESAI
 ------------------------------------------------------------
